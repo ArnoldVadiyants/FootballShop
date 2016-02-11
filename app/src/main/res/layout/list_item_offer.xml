@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  android:layout_width="match_parent"
+  android:layout_height="wrap_content"
+
+             android:paddingTop="2dip"
+             android:paddingLeft="3dip"
+             android:paddingRight="3dip"
+             android:paddingBottom="4dip"
+             android:background="@drawable/offer_list_item_back">
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="left|center_vertical"
+                    android:minHeight="?android:attr/listPreferredItemHeightLarge"
+        >
+
+
+        <TextView
+            android:id="@+id/offer_item_price"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:textAppearance="@style/TextAppearance.AppCompat.Title"
+          android:text="Price"
+          android:textIsSelectable="false"
+            android:layout_below="@+id/offer_item_name"
+            android:layout_alignBottom="@+id/offer_item_frame"
+            android:layout_toRightOf="@+id/offer_item_frame"
+            android:layout_toEndOf="@+id/offer_item_frame"
+            android:layout_marginLeft="@dimen/left_text_margin"/>
+
+        <TextView
+            android:id="@+id/offer_item_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/text_dark"
+            android:text="Name"
+            android:textIsSelectable="false"
+            android:layout_toRightOf="@+id/offer_item_frame"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="@+id/offer_item_frame"
+            android:layout_toEndOf="@+id/offer_item_frame"
+            android:layout_marginLeft="@dimen/left_text_margin"/>
+
+        <!--  android:src="@drawable/no_image_available"-->
+
+
+
+        <FrameLayout
+            android:id="@+id/offer_item_frame"
+            android:layout_width="@dimen/offer_image_size"
+            android:layout_height="@dimen/offer_image_size">
+            <ProgressBar
+                android:id="@+id/offer_item_progress"
+                style="@android:style/Widget.ProgressBar.Small"
+                android:indeterminate="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:minHeight="@dimen/image_size"
+                android:minWidth="@dimen/image_size"
+                android:layout_gravity="center"/>
+
+            <ImageView
+                android:id="@+id/offer_item_picture"
+                android:layout_width="@dimen/offer_image_size"
+                android:layout_height="@dimen/offer_image_size"
+                android:layout_toRightOf="@+id/offer_item__progress"
+                android:visibility="gone"
+                android:src="@drawable/no_image_available"/>
+        </FrameLayout>
+
+
+    </RelativeLayout>
+
+</FrameLayout>

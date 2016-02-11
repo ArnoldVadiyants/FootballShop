@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:background="@drawable/background_activated">
+
+    <!-- icon -->
+    <ImageView
+        android:id="@+id/catalog_icon"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="8dp"
+        android:src="@drawable/ic_catalog_1_sale"/>
+
+    <!-- title -->
+    <TextView
+        android:id="@+id/catalog_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="18dp"
+        android:text="Catalog Title"
+        android:layout_centerVertical="true"
+        android:layout_toRightOf="@+id/catalog_icon"
+        android:layout_toEndOf="@+id/catalog_icon"/>
+
+    <!-- counter -->
+    <ImageView
+        android:id="@+id/catalog_right_imageview"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="8dp"
+        android:gravity="center"
+        android:src="@drawable/ic_keyboard_arrow_right_black_36dp"
+        />
+
+</RelativeLayout>

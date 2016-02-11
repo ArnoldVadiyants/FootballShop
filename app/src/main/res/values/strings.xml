@@ -1,0 +1,107 @@
+<resources>
+    <string name="app_name">Football Shop</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="empty">No Items</string>
+    <string name="action_settings">Settings</string>
+    <string name="info_pay_title">Оплата</string>
+    <string name="info_pay_nal_kur">Вы можете оплатить заказ курьеру в гривнах непосредственно в момент доставки. Курьерская доставка осуществляется по Харькову в течение 3-х дней после принятия заказа.</string>
+    <string name="info_pay_nal_office">Заказ возможно оплатить прямо в офисе при получении товара.</string>
+    <string name="info_pay_in_bank">Вы можете произвести оплату в любом банке, который принимает платежи от частных лиц.
+        При формировании заказа выбрав метод оплаты "В отделении банка" вы получите счет для оплаты, который нужно распечатать и оплатить в банке.</string>
+    <string name="info_pay_beznal">Дополнительную информацию можно получить у менеджера, связавшись с нами одним из способов указанным на вкладке контактов.</string>
+    <string name="info_delivery_title">Доставка</string>
+    <string name="info_delivery_samovivoz">Забрать заказ можно в нашем офисе: Харьков, улица Полевая 44, 2-й этаж</string>
+    <string name="info_delivery_kur">Сроки доставки и другие детали согласовываются с менеджером. Заказ на сумму <b>свыше 2000 гривен доставляется бесплатно</b>. При сумме заказа менее <b>2000 гривен</b> стоимость доставки составляет  <b>45 гривен</b>.</string>
+    <string name="info_delivery_gruzop">Доставка осуществляется на один из складов Новой Почты (либо другого грузоперевозчика, согласованного с менеджером) в вашем городе, либо, непосредственно, до ваших дверей. Наш менеджер перезвонит вам, чтобы уточнить детали доставки. Услуги грузоперевозчика оплачиваются вами.</string>
+    <string-array name="catalog_list">
+        <item>Акции и распродажи</item>
+        <item>Футбольные мячи</item>
+        <item>Футбольная форма</item>
+        <item>Футбольные гетры</item>
+        <item>Футбольные щитки</item>
+        <item>Вратарские аксессуары</item>
+        <item>Футбольная обувь</item>
+        <item>Медицина</item>
+        <item>Для тренировок</item>
+        <item>Термобелье</item>
+        <item>Аксессуары и оборудование</item>
+        <item>Сумки и рюкзаки</item>
+        <item>Футбольные сувениры</item>
+        <item>На каждый день</item>
+        <item>Судейская амуниция</item>
+        <item>Детская амуниция</item>
+    </string-array>
+    <string-array name="catalog_balls_list">
+        <item>Всё в рубрике Футбольные мячи</item>
+        <item>Мячи для футбола</item>
+        <item>Мячи для мини-футбола</item>
+        <item>Мячи для уличного футбола</item>
+        <item>Детские мячи</item>
+        <item>Мячи для волейбола</item>
+        <item>Аксессуары для мячей</item>
+    </string-array>
+    <string-array name="catalog_kit_list">
+        <item>Всё в рубрике Футбольная форма</item>
+        <item>Комплекты форм</item>
+        <item>Футболки</item>
+        <item>Шорты</item>
+        <item>Клубная форма</item>
+        <item>Форма сборных</item>
+    </string-array>
+    <string-array name="catalog_goalkeeper_list">
+        <item>Всё в рубрике Вратарские аксессуары</item>
+        <item>Вратарские кофты</item>
+        <item>Вратарские перчатки</item>
+        <item>Вратарские штаны/шорты</item>
+    </string-array>
+    <string-array name="catalog_boots_list">
+        <item>Всё в рубрике Футбольная обувь</item>
+        <item>Футбольные бутсы</item>
+        <item>Сороконожки</item>
+        <item>Обувь для мини-футбола</item>
+    </string-array>
+    <string-array name="catalog_medicine_list">
+        <item>Всё в рубрике Медицина</item>
+        <item>Заморозки, крема</item>
+        <item>Для голеностопа</item>
+        <item>Для колена</item>
+        <item>Для запястья</item>
+    </string-array>
+    <string-array name="catalog_training_list">
+        <item>Всё в рубрике Для тренировок</item>
+        <item>Куртки и костюмы</item>
+        <item>Манишки</item>
+        <item>Аксессуары для тренировок</item>
+    </string-array>
+    <string-array name="catalog_souvenirs_list">
+        <item>Всё в рубрике Футбольные сувениры</item>
+        <item>Кружки</item>
+        <item>Шевроны</item>
+    </string-array>
+    <string-array name="catalog_every_day_list">
+        <item>Всё в рубрике На каждый день</item>
+        <item>Одежда</item>
+        <item>Обувь</item>
+        <item>Аксессуарык</item>
+    </string-array>
+    <string-array name="catalog_children_list">
+        <item>Всё в рубрике Детская амуниция</item>
+        <item>Деткая футбольная форма</item>
+        <item>Деткая футбольная обувь</item>
+        <item>Деткие футбольные аксессуары</item>
+        <item>Деткие куртки, штаны, костюмы</item>
+        <item>Деткая форма клубов</item>
+        <item>Деткая форма сборных</item>
+    </string-array>
+    <string-array name="information_list">
+        <item>Оплата</item>
+        <item>Доставка</item>
+        <item>Таблица размеров</item>
+        <item>Блог</item>
+        <item>Контакты</item>
+        <item>Адрес</item>
+    </string-array>
+    <string name="title_activity_main2">Main2Activity</string>
+</resources>

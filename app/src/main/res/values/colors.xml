@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#669933</color>
+    <color name="colorPrimaryDark">#336633</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="text_dark">#333333</color>
+    <color name="text_medium">#555555</color>
+    <color name="text_light">#888888</color>
+    <color name="list_item_divider">#D8D8D8</color>
+    <color name="list_view_back">#6E6E6E</color>
+
+
+</resources>
