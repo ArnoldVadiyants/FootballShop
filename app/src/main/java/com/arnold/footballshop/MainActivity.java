@@ -1,5 +1,6 @@
 package com.arnold.footballshop;
 
+import android.support.v4.app.FragmentTransaction;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.Fragment;
@@ -14,18 +15,23 @@ import android.view.MenuItem;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
-
+private boolean isBackStackEmpty = false;
 private static FragmentManager mFragmentManager;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
        mFragmentManager = getSupportFragmentManager();
-        mFragmentManager.addOnBackStackChangedListener(new FragmentManager.OnBackStackChangedListener() {
-            @Override
-            public void onBackStackChanged() {
-                if (getFragmentManager().getBackStackEntryCount() == 0) finish();
-            }
-        });
+      mFragmentManager.addOnBackStackChangedListener(new FragmentManager.OnBackStackChangedListener() {
+          @Override
+          public void onBackStackChanged() {
+              if (getFragmentManager().getBackStackEntryCount() == 0) {
+                  isBackStackEmpty = true;
+              } else {
+                  isBackStackEmpty = false;
+
+              }
+          }
+      });
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -33,7 +39,7 @@ private static FragmentManager mFragmentManager;
             //Restore the fragment's instance
            Fragment fragment = getSupportFragmentManager().getFragment(
                     savedInstanceState, "mFragment");
-            startFragment(fragment);
+            startFragment(fragment, false);
         }
         else
         {
@@ -96,20 +102,36 @@ private static FragmentManager mFragmentManager;
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
         } else {
-            OnBackPressedListener backPressedListener = null;
-            for (Fragment fragment: mFragmentManager.getFragments()) {
-                if (fragment instanceof  OnBackPressedListener) {
+          /*  OnBackPressedListener backPressedListener = null;
+            for (Fragment fragment : mFragmentManager.getFragments()) {
+                if (fragment instanceof OnBackPressedListener) {
                     backPressedListener = (OnBackPressedListener) fragment;
                     break;
                 }
+            }*/
+            Fragment fragment = mFragmentManager.findFragmentById(R.id.fragmentContainer);
+            if(fragment!=null )
+            {
+                if (fragment instanceof CatalogListFragment)
+                {
+                    finish();
+                    return;
+                }
             }
-            if (backPressedListener != null) {
+           /* if (backPressedListener != null) {
                 backPressedListener.onBackPressed();
             }
+
             else
             {
-                super.onBackPressed();
+            if(isBackStackEmpty)
+            {
+                finish();
             }
+       //     else {*/
+                super.onBackPressed();
+    //        }
+          //  }
 
         }
     }
@@ -191,6 +213,7 @@ public static void startFragment(Fragment fragment)
         if(fragment != null)
         {
             mFragmentManager.beginTransaction().replace(R.id.fragmentContainer, fragment)
+                .addToBackStack(null)
                     .commit();
         }
 
@@ -198,6 +221,42 @@ public static void startFragment(Fragment fragment)
 
     //       }
 }
+    public static void startFragment(Fragment fragment,boolean isAddToBackStack)
+    {
+        if(mFragmentManager !=null)
+        {
+            if(fragment != null)
+            {
+               FragmentTransaction ft = mFragmentManager.beginTransaction();
+               ft.replace(R.id.fragmentContainer, fragment);
+                if(isAddToBackStack)
+                {
+                  ft.addToBackStack(null);
+                }
+                ft.commit();
+            }
+
+        }
+
+        //       }
+    }
+    public static void startFragment(String fragmentTag)
+    {
+
+        if(mFragmentManager !=null)
+        {
+            Fragment fragment = mFragmentManager.findFragmentByTag(fragmentTag);
+            if(fragment != null)
+            {
+                mFragmentManager.beginTransaction().replace(R.id.fragmentContainer, fragment)
+                        .addToBackStack(null)
+                        .commit();
+            }
+
+        }
+
+        //       }
+    }
 
     @Override
     public void onSaveInstanceState(Bundle outState) {

@@ -8,6 +8,7 @@
     <dimen name="fab_margin">16dp</dimen>
     <dimen name="left_text_margin">4dp</dimen>
     <dimen name="outer_margin">2dp</dimen>
+    <dimen name="outer_margin_bot">1dp</dimen>
     <dimen name="margin">8dp</dimen>
     <dimen name="image_size">24dp</dimen>
     <dimen name="offer_image_size">150dp</dimen>

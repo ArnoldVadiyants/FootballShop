@@ -75,6 +75,7 @@ public abstract class SubListFragment extends ListFragment implements OnBackPres
 		for (int i = -1; i < arrayID.length; i++) {
 			if (position == i + 1) {
 				if (i == -1) {
+					getTag();
 					fragment = OfferListFragment.newInstance(arrayID);
 				} else {
 					int ids[] = {arrayID[i]};

@@ -2,6 +2,7 @@ package com.arnold.footballshop;
 
 import android.os.Bundle;
 import android.support.v4.app.ListFragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,10 +12,12 @@ import android.widget.ListView;
 import java.util.ArrayList;
 import java.util.List;
 
-public class OfferListFragment extends ListFragment {
+public class OfferListFragment extends ListFragment implements OnBackPressedListener {
     public static final String EXTRA_OFFER_ID =
             "offerlistfragment.offer_id";
+
     private static List<OfferItem> items = new ArrayList<OfferItem>();
+    private String fragmentTag = "";
    public OfferListFragment()
     {}
     public static  OfferListFragment newInstance(int[] arrayID) {
@@ -31,52 +34,6 @@ public class OfferListFragment extends ListFragment {
         int [] arrayId = getArguments().getIntArray(EXTRA_OFFER_ID);
         initializeItems(arrayId);
 
-      /*  HandleXML handleXML= new HandleXML(getActivity());
-        handleXML.fetchXML();
-        while (handleXML.parsingComplete);*/
-
-       /* new Thread(new Runnable() {
-            @Override
-            public void run() {
-                OfferLab offerLab  = OfferLab.get(getActivity());
-                Offer o = new Offer();
-                //   Bitmap bmp = BitmapFactory.decodeResource(getResources(),R.drawable.no_image_available);
-
-
-                o.setPicture("https://shop.football.kharkov.ua/files/products/winner_match_sala_1.200x200.jpg?c588a02aef37459e4dc9ed119307cb54");
-                o.setCurrencyId("UAH");
-                o.setName("Name впукпукукр ке керкер кнркенр кенр енркнрукнунер укеп кер укер4ер кер укенр унеоуно #");
-                o.setPrice(345);
-                offerLab.addOffer(o);
-
-
-                o = new Offer();
-
-                o.setPicture("https://shop.football.kharkov.ua/files/products/379_large.200x200.jpg?1dcb2d6a1919b625dce5793907a6fd29");
-                o.setCurrencyId("UAH");
-                o.setName("Name #");
-                o.setPrice(345);
-                offerLab.addOffer(o);
-
-                for(int i =0; i<=10; i++)
-        {
-          o = new Offer();
-        //   Bitmap bmp = BitmapFactory.decodeResource(getResources(),R.drawable.no_image_available);
-
-
-            o.setPicture("https://shop.football.kharkov.ua/files/products/b100064.150.200x200.jpg?17fd0d517bd4da3008e8451a53513768");
-            o.setCurrencyId("UAH");
-            o.setName("Щитки Uhlsport Shockshield Lite - поставляются в специальном чулке, который надевается под гетры. #" +i );
-            o.setPrice(i);
-            offerLab.addOffer(o);
-        }
-            }
-        }).start();
-        try {
-            Thread.sleep(4000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }*/
     }
 
     @Override
@@ -141,4 +98,13 @@ int id = o.getId();
        }
     }
 
+    @Override
+    public void onBackPressed() {
+        Log.d("TAG",String.valueOf(fragmentTag == null));
+if(fragmentTag != null)
+{
+    Log.d("TAG", "onBackPressed " + fragmentTag);
+    MainActivity.startFragment(fragmentTag);
+}
+    }
 }
