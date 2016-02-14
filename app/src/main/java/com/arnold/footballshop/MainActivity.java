@@ -24,12 +24,7 @@ private static FragmentManager mFragmentManager;
       mFragmentManager.addOnBackStackChangedListener(new FragmentManager.OnBackStackChangedListener() {
           @Override
           public void onBackStackChanged() {
-              if (getFragmentManager().getBackStackEntryCount() == 0) {
-                  isBackStackEmpty = true;
-              } else {
-                  isBackStackEmpty = false;
-
-              }
+              isBackStackEmpty = getFragmentManager().getBackStackEntryCount() == 0;
           }
       });
         setContentView(R.layout.activity_main);
@@ -170,7 +165,7 @@ private static FragmentManager mFragmentManager;
             startFragment(new CatalogListFragment());
      //       }
 
-        } else if (id == R.id.nav_sale) {
+        } else if (id == R.id.nav_sale) { 
             int[] saleCatID ={87};
             startFragment(new OfferListFragment().newInstance(saleCatID));
         } else if (id == R.id.nav_gallery) {
